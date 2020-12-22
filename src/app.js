@@ -9,6 +9,10 @@ const $ = document.querySelector.bind(document);
 let saveDir = "";
 let require_video, require_audio, infoTable, info;
 
+/**
+ * Display human readable sizes
+ * @param {Number} size
+ */
 function displaySize(size) {
 	if (isNaN(size)) return "";
 	if (size < 1024) {
@@ -22,6 +26,10 @@ function displaySize(size) {
 	}
 }
 
+/**
+ * Download a selected format
+ * @param {Object} target 	an entry in data.formats
+ */
 const download = (target) => {
 	try {
 		const extName = target.hasVideo
@@ -29,11 +37,12 @@ const download = (target) => {
 			: target.container === "mp4"
 			? "m4a"
 			: target.container === "webm"
-			? "weba"
+			? "webm"
 			: "unknown";
-		const filename = `${path.join(saveDir, info.videoDetails.title)}-itag${
-			target.itag
-		}.${extName}`;
+		const filename = `${path.join(
+			saveDir,
+			info.videoDetails.title.replace(/[\"\*\:\<\>\?\/\\\|]/g, "_") // filename save encoding
+		)}-itag${target.itag}.${extName}`;
 		const writer = fs.createWriteStream(filename);
 		const resultDiv = $(`#download-${target.itag}`);
 		render("0%", resultDiv);
@@ -100,9 +109,7 @@ async function getInfo() {
 	const url = $("#u").value;
 	render(html`<h3>Analyzing...</h3>`, infoTable);
 	try {
-		let data = await ytdl.getInfo(url);
-		info = data;
-		// info.url = url;
+		info = await ytdl.getInfo(url);
 		renderInfoTable();
 	} catch (err) {
 		console.error(err);

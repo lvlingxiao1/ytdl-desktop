@@ -9,7 +9,7 @@
 		"package": "electron-forge package",
 		"make": "electron-forge make",
 		"publish": "electron-forge publish",
-		"sass": "node-sass --watch src/style.scss src/style.css"
+		"sass": "node-sass src/style.scss src/style.css"
 	},
 	"keywords": [],
 	"author": {
