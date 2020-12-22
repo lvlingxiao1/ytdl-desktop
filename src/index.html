@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>YTDL</title>
+		<link rel="stylesheet" href="style.css" />
+		<script src="app.js" type="module"></script>
+	</head>
+	<body>
+		<h1>YTDL</h1>
+		<div class="search-row">
+			<input type="text" id="u" />
+			<button id="query">Get Info</button>
+		</div>
+		<div class="options-row">
+			<span>Save location: </span>
+			<a id="save-dir">/</a>
+			<button id="change-save-dir">Change</button>
+		</div>
+		<div class="options-row">
+			<input type="checkbox" id="require-video" checked />
+			<label for="require-video"> Video</label>
+			&nbsp;&nbsp;&nbsp;
+			<input type="checkbox" id="require-audio" checked />
+			<label for="require-audio"> Audio</label>
+		</div>
+		<div id="info"></div>
+	</body>
+</html>
