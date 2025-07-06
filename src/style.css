@@ -3,7 +3,7 @@ body {
 }
 h1 {
 	text-align: center;
-	font-family: Georgia, "Times New Roman", Times, serif;
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 	margin-top: 4rem;
 	font-size: 3rem;
 }
@@ -12,7 +12,7 @@ h1 {
 	align-items: center;
 	justify-content: center;
 
-	input[type="text"] {
+	input[type='text'] {
 		font-size: 1.5rem;
 		padding: 0.5rem 0.8rem;
 		border-radius: 0.25rem;
@@ -39,6 +39,10 @@ h1 {
 	#save-dir {
 		color: rgb(60, 144, 200);
 		cursor: pointer;
+	}
+
+	button {
+		margin-inline: 0.25rem;
 	}
 }
 
