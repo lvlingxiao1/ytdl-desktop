@@ -9,7 +9,8 @@
 		"package": "electron-forge package",
 		"make": "electron-forge make",
 		"publish": "electron-forge publish",
-		"sass": "sass --style=compressed --no-source-map src/style.scss src/style.css"
+		"build": "tsc && vite build",
+		"dev": "vite"
 	},
 	"keywords": [],
 	"author": {
@@ -32,7 +33,8 @@
 	},
 	"dependencies": {
 		"electron-squirrel-startup": "^1.0.0",
-		"lit-html": "^1.4.1",
+		"react": "^19.1.0",
+		"react-dom": "^19.1.0",
 		"ytdl-core": "^4.8.0"
 	},
 	"devDependencies": {
@@ -41,6 +43,12 @@
 		"@electron-forge/maker-rpm": "^6.0.0-beta.54",
 		"@electron-forge/maker-squirrel": "^6.0.0-beta.54",
 		"@electron-forge/maker-zip": "^6.0.0-beta.54",
-		"electron": "11.1.0"
+		"@types/node": "^24.0.10",
+		"@types/react": "^19.1.8",
+		"@types/react-dom": "^19.1.6",
+		"@vitejs/plugin-react": "^4.6.0",
+		"electron": "11.1.0",
+		"typescript": "^5.8.3",
+		"vite": "^7.0.2"
 	}
 }

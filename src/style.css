@@ -11,6 +11,7 @@ h1 {
 	display: flex;
 	align-items: center;
 	justify-content: center;
+
 	input[type="text"] {
 		font-size: 1.5rem;
 		padding: 0.5rem 0.8rem;

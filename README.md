@@ -15,6 +15,5 @@ Windows installer will be provided. For other platforms,
 
 ```sh
 npm i       # install dependencies
-npm run sass
 npm run make
 ```
